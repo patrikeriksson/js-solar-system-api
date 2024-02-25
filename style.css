@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
+  height: 100vh;
+  /* kanske inte ska va på bodyn, vi får se */
+  /* overflow: hidden; */
+}
+
+.temp {
+  background-color: yellow;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 80px;
+  padding-right: 70px;
+}
+
+.main-heading {
+  font-family: "Secular One", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  margin: 0;
+}
+
+.sub-heading {
+  font-family: "Lora", serif;
+  color: #ffd029;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.6em;
+  margin: 30px 0;
+  /* text-align: end; */
+}
+
+main {
+  /* ??? */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px 0 0;
+}
+
+/* Planets start */
+/* .planet-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.sun {
+  /* position: absolute; */
+  /* top: 0; */
+  /* ??? */
+  /* bottom: 0; */
+  /* margin: 0 auto; */
+  /* left: -1160px; */
+  /* width: 1278px;
+  height: 1278px;
+  border-radius: 50%; */
+  width: 370px;
+  height: 740px;
+  border-radius: 0 740px 740px 0;
+  background: #ffd029;
+  box-shadow: 0px 0px 250px 0px #ffd02933;
+}
+
+.mercury {
+  background-color: #888888;
+  width: 14px;
+  height: 14px;
+}
+
+.venus {
+  background-color: #e7cdcd;
+  width: 26px;
+  height: 26px;
+}
+
+.earth {
+  background-color: #428ed4;
+  width: 28px;
+  height: 28px;
+}
+
+.mars {
+  background-color: #ef5f5f;
+  width: 14px;
+  height: 14px;
+}
+
+.jupiter {
+  background-color: #e29468;
+  width: 188px;
+  height: 188px;
+}
+
+.saturn {
+  background-color: #c7aa72;
+  width: 144px;
+  height: 144px;
+  position: relative;
+}
+
+.saturn-ring {
+  background-color: #ffffff66;
+  width: 218px;
+  height: 6px;
+  border-radius: 100%;
+  position: absolute;
+  transform: translate(-37px, 71px) rotate(-30deg);
+}
+
+.uranus {
+  background-color: #c9d4f1;
+  width: 66px;
+  height: 66px;
+}
+
+.neptune {
+  background-color: #7a91a7;
+  width: 66px;
+  height: 66px;
+}
+
+.br-50 {
+  border-radius: 50%;
+}
+
+.hover-planet {
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    /* transform: scale(1.1); */
+  }
+}
+/* Planets end */
+
+/* Planet info start */
+.planet-info {
+  margin: auto;
+  max-width: 640px;
+}
+
+hr {
+  border: 1px solid #ffffff33;
+}
+
+.planet-content {
+  font-family: Roboto Condensed;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.planet-sub-heading {
+  font-family: Secular One;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.09em;
+  color: #ffffff;
+  margin: 32px 0 16px 0;
+}
+
+.planet-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Planet info end */
+
+footer {
+  text-align: right;
+  color: #ffffff;
+}
