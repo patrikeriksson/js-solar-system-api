@@ -11,18 +11,20 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Secular+One&display=swap"
       rel="stylesheet"
     />
-    <script src="js/index.js" defer></script>
   </head>
   <body>
     <header>
-      <input
-        class="search-input"
-        id="input"
-        type="search"
-        placeholder="Sök efter en planet"
-      />
-      <button class="search-button">Sök</button>
-      <div>
+      <form class="search-form" action="">
+        <input
+          class="search-input"
+          id="input"
+          type="search"
+          placeholder="Sök efter en planet"
+          autocomplete="off"
+        />
+        <button type="submit" class="search-button">Sök</button>
+      </form>
+      <div class="heading-container">
         <h1 class="main-heading">SOLSYSTEMET</h1>
         <h2 class="sub-heading">SOLARIS</h2>
       </div>
@@ -53,5 +55,6 @@
       <!-- </div> -->
     </main>
     <footer>This is not an accurate representation</footer>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

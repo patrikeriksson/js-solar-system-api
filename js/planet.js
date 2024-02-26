@@ -1,34 +1,23 @@
-async function getBodies() {
-  try {
-    const response = await fetch(
-      `https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies`,
-      {
-        method: "GET",
-        headers: { "x-zocom": "solaris-2ngXkR6S02ijFrTP" },
+import { getBodies } from "./api";
+
+async function getPlanet() {
+  const data = await getBodies();
+  const params = new URLSearchParams(window.location.search);
+
+  data.bodies.forEach((planet) => {
+    if (planet.name == params.get("name")) {
+      switch (planet.name) {
+        case "Solen":
+          // Ändra sun classen till en ny class för planeterna
+          // temp classen till css variabel
+          document.querySelector(".sun").classList.add("temp");
+          break;
+
+        default:
+          break;
       }
-    );
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const data = await response.json();
-
-    const params = new URLSearchParams(window.location.search);
-
-    data.bodies.forEach((planet) => {
-      if (planet.name == params.get("name")) {
-        switch (planet.name) {
-          case "Solen":
-            // Ändra sun classen till en ny class för planeterna
-            // temp classen till css variabel
-            document.querySelector(".sun").classList.add("temp");
-            break;
-
-          default:
-            break;
-        }
-        document.querySelector(".planet-info").innerHTML = `
+      console.log(data.bodies);
+      document.querySelector(".planet-info").innerHTML = `
           <h1 class="main-heading">${planet.name}</h1>
           <h2 class="sub-heading">${planet.latinName}</h2>
           <section>
@@ -61,12 +50,9 @@ async function getBodies() {
             } </p>
           </section>
         `;
-        //   document.querySelector(".main-heading").textContent = planet.name;
-      }
-    });
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+      //   document.querySelector(".main-heading").textContent = planet.name;
+    }
+  });
 }
 
-getBodies();
+getPlanet();

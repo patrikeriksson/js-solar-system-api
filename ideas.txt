@@ -1,0 +1,10 @@
+TODO:
+Search function
+Lägg till spaces efter , i moons stringen
+
+Search/header styling
+Fixa solen/planeternas styling
+
+WANTS:
+Ändra "solsystemet, solaris" texten när man hovrar en planet
+VG kraven
