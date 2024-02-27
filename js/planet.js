@@ -1,4 +1,4 @@
-import { getBodies } from "./api";
+import { getBodies } from "./api.js";
 
 async function getPlanet() {
   const data = await getBodies();
@@ -54,5 +54,4 @@ async function getPlanet() {
     }
   });
 }
-
 getPlanet();
