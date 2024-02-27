@@ -1,30 +1,26 @@
-// const BASE_URL = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com";
-// const API_KEY = "solaris-2ngXkR6S02ijFrTP";
-// const GET_PLANETS = "bodies";
-
-import { getBodies } from "./api";
+import { getBodies } from "./api.js";
 
 const searchInput = document.querySelector(".search-input");
 const searchForm = document.querySelector(".search-form");
-const planets = await getBodies();
 
-searchForm.addEventListener("submit", (e) => {
+// ÄNDRA X OCH VALIDX
+async function handleValidation(x) {
+  const planets = await getBodies();
+  let validX = false;
+  planets.bodies.forEach((planet) => {
+    if (planet.name.toLowerCase() == x || planet.latinName.toLowerCase() == x) {
+      validX = true;
+    }
+  });
+  return validX;
+}
+
+searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log(planets);
-  console.log(searchInput.value);
-  searchInput.value;
+  const result = await handleValidation(searchInput.value);
+  if (result) {
+    window.location.href = `planet.html?name=${searchInput.value}`;
+  } else {
+    alert(`${searchInput.value} är ingen planet`);
+  }
 });
-
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase;
-
-  // data.bodies.name.toLowerCase().includes(value) ||
-  //   data.bodies.latinName.toLowerCase().includes(value);
-});
-
-// .filter ????
-// .map ????
-
-// bodies.filter((planet) => {
-//   planet.name == inputSearch
-// });

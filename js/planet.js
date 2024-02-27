@@ -1,23 +1,27 @@
 import { getBodies } from "./api.js";
 
 async function getPlanet() {
-  const data = await getBodies();
   const params = new URLSearchParams(window.location.search);
+  const data = await getBodies();
 
-  data.bodies.forEach((planet) => {
-    if (planet.name == params.get("name")) {
-      switch (planet.name) {
-        case "Solen":
-          // Ändra sun classen till en ny class för planeterna
-          // temp classen till css variabel
-          document.querySelector(".sun").classList.add("temp");
-          break;
+  const planet = data.bodies.find(
+    (planet) =>
+      planet.name.toLowerCase() === params.get("name").toLowerCase() ||
+      planet.latinName.toLowerCase() === params.get("name").toLowerCase()
+  );
 
-        default:
-          break;
-      }
-      console.log(data.bodies);
-      document.querySelector(".planet-info").innerHTML = `
+  switch (planet.name) {
+    case "Solen":
+      // Ändra sun classen till en ny class för planeterna
+      // Ändra temp classen till en ny class per planet
+      document.querySelector(".sun").classList.add("temp");
+      break;
+
+    default:
+      break;
+  }
+
+  document.querySelector(".planet-info").innerHTML = `
           <h1 class="main-heading">${planet.name}</h1>
           <h2 class="sub-heading">${planet.latinName}</h2>
           <section>
@@ -46,12 +50,11 @@ async function getPlanet() {
           <section>
             <h3 class="planet-sub-heading">MÅNAR</h3>
             <p class="planet-content">${
-              planet.moons.length > 0 ? planet.moons : "Saknar månar"
+              planet.moons.length > 0 ? planet.moons.join(", ") : "Saknar månar"
             } </p>
           </section>
         `;
-      //   document.querySelector(".main-heading").textContent = planet.name;
-    }
-  });
+  //   document.querySelector(".main-heading").textContent = planet.name;
 }
+
 getPlanet();
