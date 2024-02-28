@@ -12,9 +12,32 @@ async function getPlanet() {
 
   switch (planet.name) {
     case "Solen":
-      // Ändra sun classen till en ny class för planeterna
-      // Ändra temp classen till en ny class per planet
-      document.querySelector(".sun").classList.add("temp");
+      document.querySelector(".planet").classList.add("sun-big");
+      break;
+    case "Merkurius":
+      document.querySelector(".planet").classList.add("mercury-big");
+      break;
+    case "Venus":
+      document.querySelector(".planet").classList.add("venus-big");
+      break;
+    case "Jorden":
+      document.querySelector(".planet").classList.add("earth-big");
+      break;
+    case "Mars":
+      document.querySelector(".planet").classList.add("mars-big");
+      break;
+    case "Jupiter":
+      document.querySelector(".planet").classList.add("jupiter-big");
+      break;
+    case "Saturnus":
+      document.querySelector(".planet").classList.add("saturn-big");
+      document.querySelector(".planet-ring").classList.add("saturn-big-ring");
+      break;
+    case "Uranus":
+      document.querySelector(".planet").classList.add("uranus-big");
+      break;
+    case "Neptunus":
+      document.querySelector(".planet").classList.add("neptune-big");
       break;
 
     default:

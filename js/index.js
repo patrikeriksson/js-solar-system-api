@@ -2,6 +2,7 @@ import { getBodies } from "./api.js";
 
 const searchInput = document.querySelector(".search-input");
 const searchForm = document.querySelector(".search-form");
+// Kan man göra en variabel som har .value .trim() och .toLowerCase() och sen använda den ist?
 
 // ÄNDRA X OCH VALIDX
 async function handleValidation(x) {
@@ -17,9 +18,12 @@ async function handleValidation(x) {
 
 searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const result = await handleValidation(searchInput.value);
+  // Funkade inte att söka med olika stora bokstäver, la till toLowerCase här så funkade det.
+  // Jag la också till .trim() här
+  const result = await handleValidation(searchInput.value.trim().toLowerCase());
   if (result) {
-    window.location.href = `planet.html?name=${searchInput.value}`;
+    // Och .trim() här, verkade som att jag behöver båda
+    window.location.href = `planet.html?name=${searchInput.value.trim()}`;
   } else {
     alert(`${searchInput.value} är ingen planet`);
   }

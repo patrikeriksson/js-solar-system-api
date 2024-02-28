@@ -1,7 +1,9 @@
 TODO:
+Kommentera!!!
 Ändra js variabel namn
 Search/header styling
 Fixa solen/planeternas styling
+Ta bort sånt som är utkommenterat som inte ska användas.
 
 WANTS:
 Ändra "solsystemet, solaris" texten när man hovrar en planet
