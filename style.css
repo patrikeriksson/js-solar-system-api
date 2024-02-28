@@ -6,32 +6,26 @@
 body {
   margin: 0;
   background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
-  /* VARFÖR SATTE JAG DET HÄR?? */
-  height: 100vh;
-  /* Tror det här borde va med: */
-  /* overflow: hidden; */
 }
 
+/* Header starts */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 80px 70px 0 70px;
-  /* position: relative; */
+  margin: 80px 70px 0 70px;
 }
 
-.search-form {
-  /* Se över stylingen här */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 .search-input {
   font-size: 1rem;
   height: 2.5rem;
-  width: 16rem;
+  width: 20rem;
   padding: 0.5rem;
   border-radius: 3px 0 0 3px;
   border: none;
@@ -77,35 +71,19 @@ header {
   letter-spacing: 0.6em;
   margin: 30px 0;
 }
+/* Header ends */
 
 main {
-  /* ??? */
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 70px 0 0;
+  margin: 100px 70px 0 0;
   /* FUSK! som funkar bra på planet.html men inte index.html*/
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* Planets start */
-/* .planet-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-
 .sun {
-  /* position: absolute; */
-  /* top: 0; */
-  /* ??? */
-  /* bottom: 0; */
-  /* margin: 0 auto; */
-  /* left: -1160px; */
-  /* width: 1278px;
-  height: 1278px;
-  border-radius: 50%; */
   width: 370px;
   height: 740px;
   border-radius: 0 740px 740px 0;
@@ -115,26 +93,26 @@ main {
 
 .mercury {
   background-color: #888888;
-  width: 14px;
-  height: 14px;
-}
-
-.venus {
-  background-color: #e7cdcd;
-  width: 26px;
-  height: 26px;
-}
-
-.earth {
-  background-color: #428ed4;
   width: 28px;
   height: 28px;
 }
 
+.venus {
+  background-color: #e7cdcd;
+  width: 52px;
+  height: 52px;
+}
+
+.earth {
+  background-color: #428ed4;
+  width: 56px;
+  height: 56px;
+}
+
 .mars {
   background-color: #ef5f5f;
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
 }
 
 .jupiter {
@@ -175,11 +153,19 @@ main {
   border-radius: 50%;
 }
 
-.hover-planet {
+.hover-small-planet {
   transition: 0.3s;
   &:hover {
     cursor: pointer;
-    /* transform: scale(1.1); */
+    transform: scale(1.15);
+  }
+}
+
+.hover-large-planet {
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
   }
 }
 /* Planets end */
@@ -218,11 +204,7 @@ hr {
 }
 /* Planet info end */
 
-footer {
-  text-align: right;
-  color: #ffffff;
-}
-
+/* Big planet starts */
 .planet {
   width: 370px;
   height: 740px;
@@ -236,10 +218,12 @@ footer {
 
 .mercury-big {
   background-color: #888888;
+  box-shadow: 0 0 0 50px #8888881a, 0 0 0 100px #8888880f;
 }
 
 .venus-big {
   background-color: #e7cdcd;
+  box-shadow: 0 0 0 50px #e7cdcd1a, 0 0 0 100px #e7cdcd0f;
 }
 
 .earth-big {
@@ -249,14 +233,17 @@ footer {
 
 .mars-big {
   background-color: #ef5f5f;
+  box-shadow: 0 0 0 50px #ef5f5f1a, 0 0 0 100px #ef5f5f0f;
 }
 
 .jupiter-big {
   background: #e29468;
+  box-shadow: 0 0 0 50px #e294681a, 0 0 0 100px #e294680f;
 }
 
 .saturn-big {
   background-color: #c7aa72;
+  box-shadow: 0 0 0 50px #c7aa721a, 0 0 0 100px #c7aa720f;
   position: relative;
 }
 
@@ -271,8 +258,11 @@ footer {
 
 .uranus-big {
   background-color: #c9d4f1;
+  box-shadow: 0 0 0 50px #c9d4f11a, 0 0 0 100px #c9d4f10f;
 }
 
 .neptune-big {
   background-color: #7a91a7;
+  box-shadow: 0 0 0 50px #7a91a71a, 0 0 0 100px #7a91a70f;
 }
+/* Big planet ends */

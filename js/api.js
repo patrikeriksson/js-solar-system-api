@@ -1,12 +1,12 @@
 async function getBodies() {
   try {
-    const xKey = await fetch(
+    const resKey = await fetch(
       "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys",
       {
         method: "POST",
       }
     );
-    const { key } = await xKey.json();
+    const { key } = await resKey.json();
     const response = await fetch(
       "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies",
       {
@@ -14,7 +14,6 @@ async function getBodies() {
         headers: { "x-zocom": key },
       }
     );
-    // ÄNDRA NAMN PÅ XKEY
 
     if (!response.ok) {
       throw new Error("Network response was not ok");

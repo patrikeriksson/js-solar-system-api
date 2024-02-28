@@ -10,6 +10,7 @@ async function getPlanet() {
       planet.latinName.toLowerCase() === params.get("name").toLowerCase()
   );
 
+  // Adds classes to the planet div in planet.html
   switch (planet.name) {
     case "Solen":
       document.querySelector(".planet").classList.add("sun-big");
@@ -44,6 +45,7 @@ async function getPlanet() {
       break;
   }
 
+  // Selects the element with the planet-info class and adds new html elements containing the data from the API
   document.querySelector(".planet-info").innerHTML = `
           <h1 class="main-heading">${planet.name}</h1>
           <h2 class="sub-heading">${planet.latinName}</h2>
@@ -77,7 +79,6 @@ async function getPlanet() {
             } </p>
           </section>
         `;
-  //   document.querySelector(".main-heading").textContent = planet.name;
 }
 
 getPlanet();
