@@ -8,7 +8,7 @@ body {
   background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
 }
 
-/* Header starts */
+/* Header start */
 header {
   display: flex;
   justify-content: space-between;
@@ -71,15 +71,13 @@ input[type="search"]::-webkit-search-results-decoration {
   letter-spacing: 0.6em;
   margin: 30px 0;
 }
-/* Header ends */
+/* Header end */
 
 main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 100px 70px 0 0;
-  /* FUSK! som funkar bra på planet.html men inte index.html*/
-  /* height: 100vh; */
 }
 
 /* Planets start */
@@ -204,7 +202,7 @@ hr {
 }
 /* Planet info end */
 
-/* Big planet starts */
+/* Big planets start */
 .planet {
   width: 370px;
   height: 740px;
@@ -265,4 +263,4 @@ hr {
   background-color: #7a91a7;
   box-shadow: 0 0 0 50px #7a91a71a, 0 0 0 100px #7a91a70f;
 }
-/* Big planet ends */
+/* Big planets end */

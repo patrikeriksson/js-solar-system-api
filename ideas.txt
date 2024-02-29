@@ -1,5 +1,2 @@
 TODO:
 Kommentera!!!
-
-WANTS:
-Ändra "solsystemet, solaris" texten när man hovrar en planet
