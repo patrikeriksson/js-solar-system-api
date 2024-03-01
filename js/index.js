@@ -3,6 +3,7 @@ import { getBodies } from "./api.js";
 const searchInput = document.querySelector(".search-input");
 const searchForm = document.querySelector(".search-form");
 
+// Search validation
 async function handleValidation(input) {
   const planets = await getBodies();
   let validInput = false;
@@ -17,6 +18,7 @@ async function handleValidation(input) {
   return validInput;
 }
 
+// Search function
 searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const result = await handleValidation(searchInput.value.trim().toLowerCase());

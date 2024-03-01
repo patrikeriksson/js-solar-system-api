@@ -1,5 +1,7 @@
+// Module that adds all the planet information to the planet.html page
 import { getBodies } from "./api.js";
 
+// Function that provides a specific planet based on the search parameters of the URL
 async function getPlanet() {
   const params = new URLSearchParams(window.location.search);
   const data = await getBodies();

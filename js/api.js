@@ -1,12 +1,15 @@
+// Module for fetching the "bodies" containing the data about the planets
 async function getBodies() {
+  // Fetches the API-key using method POST
   try {
-    const resKey = await fetch(
+    const responseKey = await fetch(
       "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys",
       {
         method: "POST",
       }
     );
-    const { key } = await resKey.json();
+    const { key } = await responseKey.json();
+    // Fetches data using the API-key
     const response = await fetch(
       "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies",
       {
